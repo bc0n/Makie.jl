@@ -2,17 +2,14 @@
 using Makie.LaTeXStrings: @L_str # hide
 __result = begin # hide
     using CairoMakie
-using ColorSchemes
+using CairoMakie # hide
 CairoMakie.activate!() # hide
-
 fig = Figure()
-
-rects = fig[1:4, 1:6] = [
-    Box(fig, color = c)
-    for c in get.(Ref(ColorSchemes.rainbow), (0:23) ./ 23)]
-
+Box(fig[1, 1], strokewidth = 1)
+Box(fig[1, 2], strokewidth = 10)
+Box(fig[1, 3], strokewidth = 0)
 fig
 end # hide
-save(joinpath(@OUTPUT, "example_8346100819306574190.png"), __result; ) # hide
-
+save(joinpath(@OUTPUT, "example_15431918423985766845.png"), __result; ) # hide
+save(joinpath(@OUTPUT, "example_15431918423985766845.svg"), __result; ) # hide
 nothing # hide
