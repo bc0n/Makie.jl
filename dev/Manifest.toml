@@ -1302,7 +1302,7 @@ uuid = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
 deps = ["Colors", "FileIO", "GeometryBasics", "LinearAlgebra", "Makie", "Printf", "RadeonProRender"]
 path = "../RPRMakie"
 uuid = "22d9f318-5e34-4b44-b769-6e3734a732a6"
-version = "0.5.13"
+version = "0.5.12"
 
 [[deps.RadeonProRender]]
 deps = ["CEnum", "Colors", "GeometryBasics", "Libdl", "Pkg", "Printf", "RadeonProRender_jll"]
