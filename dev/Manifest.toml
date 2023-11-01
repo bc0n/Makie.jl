@@ -278,9 +278,9 @@ uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
 
 [[deps.DelaunayTriangulation]]
 deps = ["DataStructures", "EnumX", "ExactPredicates", "Random", "SimpleGraphs"]
-git-tree-sha1 = "bea7984f7e09aeb28a3b071c420a0186cb4fabad"
+git-tree-sha1 = "773d8542e4ce9cef73b4f08272959581ca63e08b"
 uuid = "927a84f5-c5f4-47a5-9785-b46e178433df"
-version = "0.8.8"
+version = "0.8.9"
 
 [[deps.DelimitedFiles]]
 deps = ["Mmap"]
