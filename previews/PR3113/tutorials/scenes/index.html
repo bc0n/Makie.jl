@@ -121,12 +121,14 @@ scale!(scene, 0.5, 0.5, 0.5)
 rotate!(scene, Vec3f(1, 0, 0), 0.5) # 0.5 rad around the y axis
 scene</code></pre><p></p><p><a id="example_11945114660116549425"><img alt="" src="../../assets/tutorials/scenes/code/output/example_11945114660116549425.png"/></a></p><p>One can also transform the plot objects directly, which then adds the transformation from the plot object on top of the transformation from the scene. One can add subscenes and interact with those dynamically. Makie offers here what's usually referred to as a scene graph.</p><pre><code class="language-julia">translate!(sphere_plot, Vec3f(0, 0, 1))
 scene</code></pre><p></p><p><a id="example_8563869755570483184"><img alt="" src="../../assets/tutorials/scenes/code/output/example_8563869755570483184.png"/></a></p><p>The scene graph can be used to create rigid transformations, like for a robot arm:</p><pre><code class="language-julia">parent = Scene()
-cam3d!(parent)
+cam3d!(parent; clipping_mode = :static)
 
 # One can set the camera lookat and eyeposition, by getting the camera controls and using `update_cam!`
 camc = cameracontrols(parent)
 update_cam!(parent, camc, Vec3f(0, 8, 0), Vec3f(4.0, 0, 0))
-
+# One may need to adjust the
+# near and far clip plane when adjusting the camera manually
+camc.far[] = 100f0
 s1 = Scene(parent, camera=parent.camera)
 mesh!(s1, Rect3f(Vec3f(0, -0.1, -0.1), Vec3f(5, 0.2, 0.2)))
 s2 = Scene(s1, camera=parent.camera)
@@ -135,7 +137,7 @@ translate!(s2, 5, 0, 0)
 s3 = Scene(s2, camera=parent.camera)
 mesh!(s3, Rect3f(Vec3f(-0.2), Vec3f(0.4)), color=:blue)
 translate!(s3, 5, 0, 0)
-parent</code></pre><p></p><p><a id="example_1045421485802214049"><img alt="" src="../../assets/tutorials/scenes/code/output/example_1045421485802214049.png"/></a></p><pre><code class="language-julia"># Now, rotate the "joints"
+parent</code></pre><p></p><p><a id="example_6707589621681551171"><img alt="" src="../../assets/tutorials/scenes/code/output/example_6707589621681551171.png"/></a></p><pre><code class="language-julia"># Now, rotate the "joints"
 rotate!(s2, Vec3f(0, 1, 0), 0.5)
 rotate!(s3, Vec3f(1, 0, 0), 0.5)
 parent</code></pre><p></p><p><a id="example_11571802228848375181"><img alt="" src="../../assets/tutorials/scenes/code/output/example_11571802228848375181.png"/></a></p><p>With this basic principle, we can even bring robots to life :) <a href="https://github.com/Kevin-Mattheus-Moerman">Kevin Moerman</a> was so nice to supply a Lego mesh, which we're going to animate! When the scene graph is really just about a transformation graph, one can use the <code>Transformation</code> struct directly, which is what we're going to do here. This is more efficient and easier than creating a scene for each model.</p><pre><code class="language-julia">using MeshIO, FileIO, GeometryBasics
