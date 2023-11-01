@@ -797,9 +797,9 @@ uuid = "dd4b983a-f0e5-5f8d-a1b7-129d4a5fb1ac"
 version = "2.10.1+0"
 
 [[deps.LaTeXStrings]]
-git-tree-sha1 = "f2355693d6778a178ade15952b7ac47a4ff97996"
+git-tree-sha1 = "50901ebc375ed41dbf8058da26f9de442febbbec"
 uuid = "b964fa9f-0449-5b57-a5c2-d3ea65f4040f"
-version = "1.3.0"
+version = "1.3.1"
 
 [[deps.LazyArtifacts]]
 deps = ["Artifacts", "Pkg"]
@@ -1302,7 +1302,7 @@ uuid = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
 deps = ["Colors", "FileIO", "GeometryBasics", "LinearAlgebra", "Makie", "Printf", "RadeonProRender"]
 path = "../RPRMakie"
 uuid = "22d9f318-5e34-4b44-b769-6e3734a732a6"
-version = "0.5.13"
+version = "0.5.12"
 
 [[deps.RadeonProRender]]
 deps = ["CEnum", "Colors", "GeometryBasics", "Libdl", "Pkg", "Printf", "RadeonProRender_jll"]

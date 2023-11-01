@@ -1116,28 +1116,28 @@ datashader(points)</code></pre><p>Do pay attention though, that if x and y don't
      @ ~/work/Makie.jl/Makie.jl/src/camera/camera.jl:36
   [5] disconnect!(c::EmptyCamera)
      @ ~/work/Makie.jl/Makie.jl/src/camera/camera.jl:32
-  [6] disconnect!(c::Camera)
-     @ ~/work/Makie.jl/Makie.jl/src/camera/camera.jl:24
-  [7] disconnect!(window::GLFW.Window, ::typeof(entered_window))
+  [6] disconnect!(window::GLFW.Window, ::typeof(entered_window))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:310
-  [8] disconnect!(window::GLFW.Window, ::typeof(hasfocus))
+  [7] disconnect!(window::GLFW.Window, ::typeof(hasfocus))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:288
-  [9] disconnect!(window::GLFW.Window, ::typeof(scroll))
+  [8] disconnect!(window::GLFW.Window, ::typeof(scroll))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:265
- [10] disconnect!(window::GLFW.Window, ::typeof(mouse_position))
+  [9] disconnect!(window::GLFW.Window, ::typeof(mouse_position))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:234
- [11] disconnect!(window::GLFW.Window, ::typeof(unicode_input))
+ [10] disconnect!(window::GLFW.Window, ::typeof(unicode_input))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:167
- [12] disconnect!(window::GLFW.Window, ::typeof(dropped_files))
+ [11] disconnect!(window::GLFW.Window, ::typeof(dropped_files))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:144
- [13] disconnect!(window::GLFW.Window, ::typeof(keyboard_buttons))
+ [12] disconnect!(window::GLFW.Window, ::typeof(keyboard_buttons))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:123
- [14] disconnect!(window::GLFW.Window, ::typeof(mouse_buttons))
+ [13] disconnect!(window::GLFW.Window, ::typeof(mouse_buttons))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:108
- [15] disconnect!(::GLFW.Window, ::typeof(window_area))
+ [14] disconnect!(::GLFW.Window, ::typeof(window_area))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:86
- [16] disconnect!(window::GLFW.Window, ::typeof(window_open))
-     @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:36</code></pre></div></div><div class="docstring"><div class="doc-header" id="dropped_files"><a href="#dropped_files">dropped_files</a></div><div class="doc-content"><p>Registers a callback for drag and drop of files. returns <code>Observable{Vector{String}}</code>, which are absolute file paths <a href="http://www.glfw.org/docs/latest/group__input.html#gacc95e259ad21d4f666faa6280d4018fd">GLFW Docs</a></p></div></div><div class="docstring"><div class="doc-header" id="ecdfplot"><a href="#ecdfplot">ecdfplot</a></div><div class="doc-content"><pre><code>ecdfplot(values; npoints=10_000[, weights])</code></pre><p>Plot the empirical cumulative distribution function (ECDF) of <code>values</code>.</p><p><code>npoints</code> controls the resolution of the plot. If <code>weights</code> for the values are provided, a weighted ECDF is plotted.</p><h2>Attributes</h2><p>Available attributes and their defaults for <code>Combined{Makie.ecdfplot}</code> are: </p><pre><code>  alpha           1.0
+ [15] disconnect!(window::GLFW.Window, ::typeof(window_open))
+     @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:36
+ [16] disconnect!(c::Camera)
+     @ ~/work/Makie.jl/Makie.jl/src/camera/camera.jl:24</code></pre></div></div><div class="docstring"><div class="doc-header" id="dropped_files"><a href="#dropped_files">dropped_files</a></div><div class="doc-content"><p>Registers a callback for drag and drop of files. returns <code>Observable{Vector{String}}</code>, which are absolute file paths <a href="http://www.glfw.org/docs/latest/group__input.html#gacc95e259ad21d4f666faa6280d4018fd">GLFW Docs</a></p></div></div><div class="docstring"><div class="doc-header" id="ecdfplot"><a href="#ecdfplot">ecdfplot</a></div><div class="doc-content"><pre><code>ecdfplot(values; npoints=10_000[, weights])</code></pre><p>Plot the empirical cumulative distribution function (ECDF) of <code>values</code>.</p><p><code>npoints</code> controls the resolution of the plot. If <code>weights</code> for the values are provided, a weighted ECDF is plotted.</p><h2>Attributes</h2><p>Available attributes and their defaults for <code>Combined{Makie.ecdfplot}</code> are: </p><pre><code>  alpha           1.0
   color           :black
   colormap        :viridis
   colorrange      MakieCore.Automatic()
