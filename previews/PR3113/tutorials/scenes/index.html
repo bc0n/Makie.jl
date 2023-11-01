@@ -36,7 +36,7 @@
     # set_theme!(lightposition=:eyeposition, ambient=RGBf(0.5, 0.5, 0.5))`
     lights = Makie.automatic,
     backgroundcolor = :gray,
-    resolution = (500, 500);
+    size = (500, 500);
     # gets filled in with the currently set global theme
     theme_kw...
 )</code></pre><p>A scene is doing four things:</p><ul><li><p>holds a local theme, that gets applied to all plot objects in that scene</p></li><li><p>manages the camera, projection and transformation matrices</p></li><li><p>defines the window size. For sub-scenes, the child scene can have smaller window areas than the parent area.</p></li><li><p>holds a reference to all window events</p></li></ul><h2 id="scenes_and_subwindows"><a class="header-anchor" href="#scenes_and_subwindows">Scenes and subwindows</a></h2><p>With scenes, one can create subwindows. The window extends are given by a <code>Rect{2, Int}</code> and the position is always in window pixels and relative to the parent.</p><pre><code class="language-julia">using GLMakie, Makie
@@ -74,7 +74,7 @@ f</code></pre><p></p><p><a id="example_13700333151825002484"><img alt="" src="..
   unicode_input:    \0
   dropped_files:    String[]
   hasfocus:         false
-  entered_window:   true
+  entered_window:   false
 </code></pre><p>We can use those events to e.g. move the subwindow. If you execute the below in GLMakie, you can move the sub-window around by pressing left mouse &amp; ctrl:</p><pre><code class="language-julia">on(scene.events.mouseposition) do mousepos
     if ispressed(subwindow, Mouse.left &amp; Keyboard.left_control)
         subwindow.px_area[] = Rect(Int.(mousepos)..., 200, 200)
@@ -223,7 +223,7 @@ lights = [
     EnvironmentLight(1.5, rotl90(load(assetpath("sunflowers_1k.hdr"))')),
     PointLight(Vec3f(50, 0, 200), RGBf(radiance, radiance, radiance*1.1)),
 ]
-s = Scene(resolution=(500, 500), lights=lights)
+s = Scene(size=(500, 500), lights=lights)
 cam3d!(s)
 c = cameracontrols(s)
 c.near[] = 5

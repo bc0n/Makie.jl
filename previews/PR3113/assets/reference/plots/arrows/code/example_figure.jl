@@ -5,7 +5,7 @@ __result = begin # hide
 CairoMakie.activate!() # hide
 
 
-fig = Figure(resolution = (800, 800))
+fig = Figure(size = (800, 800))
 ax = Axis(fig[1, 1], backgroundcolor = "black")
 xs = LinRange(0, 2pi, 20)
 ys = LinRange(0, 3pi, 20)
@@ -19,6 +19,6 @@ arrows!(ax, xs, ys, arrow_fun, arrowsize = 10, lengthscale = 0.3,
     arrowcolor = strength, linecolor = strength)
 fig
 end # hide
-save(joinpath(@OUTPUT, "example_18165102389437316033.png"), __result; ) # hide
+save(joinpath(@OUTPUT, "example_17459094137417457175.png"), __result; ) # hide
 
 nothing # hide

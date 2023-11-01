@@ -6,7 +6,7 @@ CairoMakie.activate!() # hide
 
 set_theme!() # hide
 
-f = Figure(resolution = (800, 800))
+f = Figure(size = (800, 800))
 
 Axis(f[1, 1], title = "Default cycle palette")
 
@@ -34,6 +34,6 @@ set_theme!() # hide
 
 f
 end # hide
-save(joinpath(@OUTPUT, "example_7674987383173405816.png"), __result; ) # hide
+save(joinpath(@OUTPUT, "example_11248444432920713655.png"), __result; ) # hide
 
 nothing # hide

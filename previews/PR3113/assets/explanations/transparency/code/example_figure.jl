@@ -4,7 +4,7 @@ __result = begin # hide
     using GLMakie
 GLMakie.activate!() # hide
 
-fig = Figure(resolution = (800, 400))
+fig = Figure(size = (800, 400))
 ax1 = LScene(fig[1, 1], show_axis=false)
 p1 = mesh!(ax1, Rect2f(-2, -2, 4, 4), color = :red, shading = NoShading, transparency = true)
 p2 = mesh!(ax1, Rect2f(-2, -2, 4, 4), color = :blue, shading = NoShading, transparency = true)
@@ -20,6 +20,6 @@ rotate!(p1, Vec3f(0, 1, 0), 0.1)
 rotate!(p2, Vec3f(0, 1, 0), -0.1)
 fig
 end # hide
-save(joinpath(@OUTPUT, "example_9311424535160320955.png"), __result; ) # hide
+save(joinpath(@OUTPUT, "example_8882870002956893010.png"), __result; ) # hide
 
 nothing # hide

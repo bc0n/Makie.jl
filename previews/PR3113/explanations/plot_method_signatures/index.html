@@ -29,7 +29,7 @@
 scatter(gridposition, args...; kwargs...) -&gt; ::AxisPlot</code></pre><p><code>FigureAxisPlot</code> is just a collection of the new figure, axis and plot. For convenience it has the same display overload as <code>Figure</code>, so that <code>scatter(args...)</code> displays a plot without further work. It can be destructured at assignment like <code>fig, ax, plotobj = scatter(args...)</code>.</p><p><code>AxisPlot</code> is a collection of a new axis and plot. It has no special display overload but can also be destructured like <code>ax, plotobj = scatter(gridposition, args...)</code>.</p><h3 id="special_keyword_arguments"><a class="header-anchor" href="#special_keyword_arguments">Special Keyword Arguments</a></h3><p>Methods that create an <code>AxisPlot</code> accept a special-cased <code>axis</code> keyword, where you can pass a dict-like object containing keyword arguments that should be passed to the created axis. Methods that create a <code>FigureAxisPlot</code> additionally accept a special cased <code>figure</code> keyword, where you can pass a dict-like object containing keyword arguments that should be passed to the created figure.</p><p>All other keyword arguments are passed as attributes to the plotting function.</p><p>Here are two examples with the scatter function (take care to create single-argument NamedTuples correctly, for example with a trailing comma):</p><pre><code class="language-julia">using GLMakie
 # FigureAxisPlot takes figure and axis keywords
 fig, ax, p = lines(cumsum(randn(1000)),
-    figure = (resolution = (1000, 600),),
+    figure = (size = (1000, 600),),
     axis = (ylabel = "Temperature",),
     color = :red)
 
@@ -38,7 +38,7 @@ lines(fig[2, 1], cumsum(randn(1000)),
     axis = (xlabel = "Time (sec)", ylabel = "Stock Value"),
     color = :blue)
 
-fig</code></pre><p></p><p><a id="example_15985286866026406005"><img alt="" src="../../assets/explanations/plot_method_signatures/code/output/example_15985286866026406005.png"/></a></p><h2 id="mutating"><a class="header-anchor" href="#mutating">Mutating</a></h2><p>The mutating methods always just return a plot object. If no figure is passed, the <code>current_figure()</code> is used, if no axis or scene is given, the <code>current_axis()</code> is used.</p><pre><code class="language-julia">scatter!(args...; kwargs...) -&gt; ::Scatter
+fig</code></pre><p></p><p><a id="example_5062275523097965851"><img alt="" src="../../assets/explanations/plot_method_signatures/code/output/example_5062275523097965851.png"/></a></p><h2 id="mutating"><a class="header-anchor" href="#mutating">Mutating</a></h2><p>The mutating methods always just return a plot object. If no figure is passed, the <code>current_figure()</code> is used, if no axis or scene is given, the <code>current_axis()</code> is used.</p><pre><code class="language-julia">scatter!(args...; kwargs...) -&gt; ::Scatter
 scatter!(figure, args...; kwargs...) -&gt; ::Scatter
 scatter!(gridposition, args...; kwargs...) -&gt; ::Scatter
 scatter!(axis, args...; kwargs...) -&gt; ::Scatter

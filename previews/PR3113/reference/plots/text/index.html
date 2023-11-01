@@ -75,7 +75,7 @@ text!(x, y, text = string.(aligns), align = aligns)
 current_figure()</code></pre><p></p><p><a id="example_2966964012588699511"><img alt="" src="../../../assets/reference/plots/text/code/output/example_2966964012588699511.svg"/></a></p><h2 id="justification"><a class="header-anchor" href="#justification">Justification</a></h2><p>By default, justification of multiline text follows alignment. Text that is left aligned is also left justified. You can override this with the <code>justification</code> attribute.</p><pre><code class="language-julia">using CairoMakie
 
 
-scene = Scene(camera = campixel!, resolution = (800, 800))
+scene = Scene(camera = campixel!, size = (800, 800))
 
 points = [Point(x, y) .* 200 for x in 1:3 for y in 1:3]
 scatter!(scene, points, marker = :circle, markersize = 10px)
@@ -105,7 +105,7 @@ for (p, al) in zip(points[7:9], (:left, :center, :right))
         align = (:center, :top), rotation = pi/2)
 end
 
-scene</code></pre><p></p><p><a id="example_9809826067918186485"><img alt="" src="../../../assets/reference/plots/text/code/output/example_9809826067918186485.svg"/></a></p><h2 id="offset"><a class="header-anchor" href="#offset">Offset</a></h2><p>The offset attribute can be used to shift text away from its position. This is especially useful with <code>space = :pixel</code>, for example to place text together with barplots. You can specify the end of the barplots in data coordinates, and then offset the text a little bit to the left.</p><pre><code class="language-julia">using CairoMakie
+scene</code></pre><p></p><p><a id="example_4551058226511014261"><img alt="" src="../../../assets/reference/plots/text/code/output/example_4551058226511014261.svg"/></a></p><h2 id="offset"><a class="header-anchor" href="#offset">Offset</a></h2><p>The offset attribute can be used to shift text away from its position. This is especially useful with <code>space = :pixel</code>, for example to place text together with barplots. You can specify the end of the barplots in data coordinates, and then offset the text a little bit to the left.</p><pre><code class="language-julia">using CairoMakie
 
 
 f = Figure()

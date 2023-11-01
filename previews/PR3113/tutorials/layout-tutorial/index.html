@@ -29,7 +29,7 @@
 using Makie.FileIO
 
 f = Figure(backgroundcolor = RGBf(0.98, 0.98, 0.98),
-    resolution = (1000, 700))
+    size = (1000, 700))
 ga = f[1, 1] = GridLayout()
 gb = f[2, 1] = GridLayout()
 gcd = f[1:2, 2] = GridLayout()
@@ -158,7 +158,7 @@ f</code></pre><label class="hidecode" for="hidecode"></label><p>How do we approa
 using FileIO
 
 f = Figure(backgroundcolor = RGBf(0.98, 0.98, 0.98),
-    resolution = (1000, 700))</code></pre><p></p><p><a id="example_13353249325812862742"><img alt="" src="../../assets/tutorials/layout-tutorial/code/output/example_13353249325812862742.png"/></a></p><h2 id="setting_up_gridlayouts"><a class="header-anchor" href="#setting_up_gridlayouts">Setting up GridLayouts</a></h2><p>Now, let's make the four nested GridLayouts that are going to hold the objects of A, B, C and D. There's also the layout that holds C and D together, so the rows are separate from A and B. We are not going to see anything yet as we have no visible content, but that will come soon.</p><div class="admonition note"><p class="admonition-title">Note</p><p>It's not strictly necessary to first create separate <code>GridLayout</code>s, then use them to place objects in the figure. You can also implicitly create nested grids using multiple indexing, for example like <code>Axis(f[1, 2:3][4:5, 6])</code>. This is further explained in <a href="../../explanations/figure/index.html#gridpositions_and_gridsubpositions">GridPositions and GridSubpositions</a>. But if you want to manipulate your nested grids afterwards, for example to change column sizes or row gaps, it's easier if you have them stored in variables already.</p></div><pre><code class="language-julia">ga = f[1, 1] = GridLayout()
+    size = (1000, 700))</code></pre><p></p><p><a id="example_17570685017715235040"><img alt="" src="../../assets/tutorials/layout-tutorial/code/output/example_17570685017715235040.png"/></a></p><h2 id="setting_up_gridlayouts"><a class="header-anchor" href="#setting_up_gridlayouts">Setting up GridLayouts</a></h2><p>Now, let's make the four nested GridLayouts that are going to hold the objects of A, B, C and D. There's also the layout that holds C and D together, so the rows are separate from A and B. We are not going to see anything yet as we have no visible content, but that will come soon.</p><div class="admonition note"><p class="admonition-title">Note</p><p>It's not strictly necessary to first create separate <code>GridLayout</code>s, then use them to place objects in the figure. You can also implicitly create nested grids using multiple indexing, for example like <code>Axis(f[1, 2:3][4:5, 6])</code>. This is further explained in <a href="../../explanations/figure/index.html#gridpositions_and_gridsubpositions">GridPositions and GridSubpositions</a>. But if you want to manipulate your nested grids afterwards, for example to change column sizes or row gaps, it's easier if you have them stored in variables already.</p></div><pre><code class="language-julia">ga = f[1, 1] = GridLayout()
 gb = f[2, 1] = GridLayout()
 gcd = f[1:2, 2] = GridLayout()
 gc = gcd[1, 1] = GridLayout()

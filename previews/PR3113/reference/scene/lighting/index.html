@@ -38,7 +38,7 @@
     )
 end</code></pre><p>The different light sources control the <code>light_direction</code> and may further adjust the result of this function. For example, <code>SpotLight</code> adds a factor which reduces light intensity outside its area.</p><h2 id="types_of_light"><a class="header-anchor" href="#types_of_light">Types of Light</a></h2><h3 id="ambientlight"><a class="header-anchor" href="#ambientlight">AmbientLight</a></h3><div class="docstring"><div class="doc-header" id="AmbientLight"><a href="#AmbientLight">AmbientLight</a></div><div class="doc-content"><pre><code>AmbientLight(color) &lt;: AbstractLight</code></pre><p>A simple ambient light that uniformly lights every object based on its light color.</p><p>Availability:</p><ul><li><p>All backends with <code>shading = FastShading</code> or <code>MultiLightShading</code></p></li></ul></div></div><pre><code class="language-julia">using CairoMakie
 
-fig = Figure(resolution = (600, 600))
+fig = Figure(size = (600, 600))
 ax11 = LScene(fig[1, 1], scenekw = (lights = [],))
 ax12 = LScene(fig[1, 2], scenekw = (lights = [AmbientLight(RGBf(0, 0, 0))],))
 ax21 = LScene(fig[2, 1], scenekw = (lights = [AmbientLight(RGBf(0.7, 0.7, 0.7))],))
@@ -46,9 +46,9 @@ ax22 = LScene(fig[2, 2], scenekw = (lights = [AmbientLight(RGBf(0.8, 0.3, 0))],)
 for ax in (ax11, ax12, ax21, ax22)
     mesh!(ax, Sphere(Point3f(0), 1f0), color = :white)
 end
-fig</code></pre><p></p><p><a id="example_13343670881246311202"><img alt="" src="../../../assets/reference/scene/lighting/code/output/example_13343670881246311202.png"/></a></p><h3 id="directionallight"><a class="header-anchor" href="#directionallight">DirectionalLight</a></h3><div class="docstring"><div class="doc-header" id="DirectionalLight"><a href="#DirectionalLight">DirectionalLight</a></div><div class="doc-content"><pre><code>DirectionalLight(color, direction[, camera_relative = false])</code></pre><p>A light type which simulates a distant light source with parallel light rays going in the given <code>direction</code>.</p><p>Availability:</p><ul><li><p>All backends with <code>shading = FastShading</code> or <code>MultiLightShading</code></p></li></ul></div></div><pre><code class="language-julia">using GLMakie
+fig</code></pre><p></p><p><a id="example_12902985603314622121"><img alt="" src="../../../assets/reference/scene/lighting/code/output/example_12902985603314622121.png"/></a></p><h3 id="directionallight"><a class="header-anchor" href="#directionallight">DirectionalLight</a></h3><div class="docstring"><div class="doc-header" id="DirectionalLight"><a href="#DirectionalLight">DirectionalLight</a></div><div class="doc-content"><pre><code>DirectionalLight(color, direction[, camera_relative = false])</code></pre><p>A light type which simulates a distant light source with parallel light rays going in the given <code>direction</code>.</p><p>Availability:</p><ul><li><p>All backends with <code>shading = FastShading</code> or <code>MultiLightShading</code></p></li></ul></div></div><pre><code class="language-julia">using GLMakie
 
-fig = Figure(resolution = (600, 600))
+fig = Figure(size = (600, 600))
 ax11 = LScene(fig[1, 1], scenekw = (lights = [DirectionalLight(RGBf(0, 0, 0), Vec3f(-1, 0, 0))],))
 ax12 = LScene(fig[1, 2], scenekw = (lights = [DirectionalLight(RGBf(1, 1, 1), Vec3f(-1, 0, 0))],))
 lights = [
@@ -61,14 +61,14 @@ ax22 = LScene(fig[2, 2], scenekw = (lights = [DirectionalLight(RGBf(4, 2, 1), Ve
 for ax in (ax11, ax12, ax21, ax22)
     mesh!(ax, Sphere(Point3f(0), 1f0), color = :white)
 end
-fig</code></pre><p></p><p><a id="example_11940399860379521233"><img alt="" src="../../../assets/reference/scene/lighting/code/output/example_11940399860379521233.png"/></a></p><h3 id="pointlight"><a class="header-anchor" href="#pointlight">PointLight</a></h3><div class="docstring"><div class="doc-header" id="PointLight"><a href="#PointLight">PointLight</a></div><div class="doc-content"><pre><code>PointLight(color, position[, attenuation = Vec2f(0)])
+fig</code></pre><p></p><p><a id="example_13170248702004837873"><img alt="" src="../../../assets/reference/scene/lighting/code/output/example_13170248702004837873.png"/></a></p><h3 id="pointlight"><a class="header-anchor" href="#pointlight">PointLight</a></h3><div class="docstring"><div class="doc-header" id="PointLight"><a href="#PointLight">PointLight</a></div><div class="doc-content"><pre><code>PointLight(color, position[, attenuation = Vec2f(0)])
 PointLight(color, position, range::Real)</code></pre><p>A point-like light source placed at the given <code>position</code> with the given light <code>color</code>.</p><p>Optionally an attenuation parameter can be used to reduce the brightness of the light source with distance. The reduction is given by <code>1 / (1 + attenuation[1] * distance + attenuation[2] * distance^2)</code>. Alternatively you can pass a light <code>range</code> to generate matching default attenuation parameters. Note that you may need to set the light intensity, i.e. the light color to values greater than 1 to get satisfying results.</p><p>Availability:</p><ul><li><p>GLMakie with <code>shading = MultiLightShading</code></p></li><li><p>RPRMakie</p></li></ul></div></div><pre><code class="language-julia">using GLMakie
 
-fig = Figure(resolution = (600, 600))
+fig = Figure(size = (600, 600))
 ax = LScene(fig[1, 1], scenekw = (lights = [PointLight(RGBf(1, 1, 1), Point3f(0, 0, 0))],))
 ps = [Point3f(x, y, z) for x in (-1, 0, 1) for y in (-1, 0, 1) for z in (-1, 0, 1)]
 meshscatter!(ax, ps, color = :white)
-fig</code></pre><p></p><p><a id="example_14985517581191266534"><img alt="" src="../../../assets/reference/scene/lighting/code/output/example_14985517581191266534.png"/></a></p><pre><code class="language-julia">using GLMakie
+fig</code></pre><p></p><p><a id="example_3836574841573594552"><img alt="" src="../../../assets/reference/scene/lighting/code/output/example_3836574841573594552.png"/></a></p><pre><code class="language-julia">using GLMakie
 
 lights = [
     PointLight(RGBf(1, 1, 1), Point3f(0, 0, 5), 50),
@@ -78,12 +78,12 @@ lights = [
     PointLight(RGBf(2, 2, 0), Point3f( 3, -3, 2), 10),
 ]
 
-fig = Figure(resolution = (600, 600))
+fig = Figure(size = (600, 600))
 ax = LScene(fig[1, 1], scenekw = (lights = lights,))
 ps = [Point3f(x, y, 0) for x in -5:5 for y in -5:5]
 meshscatter!(ax, ps, color = :white, markersize = 0.75)
 scatter!(ax, map(l -&gt; l.position[], lights), color = map(l -&gt; l.color[], lights), strokewidth = 1, strokecolor = :black)
-fig</code></pre><p></p><p><a id="example_4229178436334171537"><img alt="" src="../../../assets/reference/scene/lighting/code/output/example_4229178436334171537.png"/></a></p><p>With a strong PointLight and Attenuation you can create different colors at different distances.</p><pre><code class="language-julia">using GLMakie, GeometryBasics
+fig</code></pre><p></p><p><a id="example_489395114431765649"><img alt="" src="../../../assets/reference/scene/lighting/code/output/example_489395114431765649.png"/></a></p><p>With a strong PointLight and Attenuation you can create different colors at different distances.</p><pre><code class="language-julia">using GLMakie, GeometryBasics
 
 ps = [
     Point3f(cosd(phi) * cosd(theta), sind(phi) * cosd(theta), sind(theta))
@@ -94,13 +94,13 @@ m = GeometryBasics.Mesh(meta(ps, normals = ps), decompose(GLTriangleFace, faces)
 
 lights = [PointLight(RGBf(10, 4, 2), Point3f(0, 0, 0), 5)]
 
-fig = Figure(resolution = (600, 600), backgroundcolor = :black)
+fig = Figure(size = (600, 600), backgroundcolor = :black)
 ax = LScene(fig[1, 1], scenekw = (lights = lights,), show_axis = false)
 update_cam!(ax.scene, ax.scene.camera_controls, Rect3f(Point3f(-2), Vec3f(4)))
 meshscatter!(
     ax, [Point3f(0) for _ in 1:14], marker = m, markersize = 0.1:0.2:3.0,
     color = :white, backlight = 1f0, transparency = false)
-fig</code></pre><p></p><p><a id="example_4870082951577949547"><img alt="" src="../../../assets/reference/scene/lighting/code/output/example_4870082951577949547.png"/></a></p><h3 id="spotlight"><a class="header-anchor" href="#spotlight">SpotLight</a></h3><div class="docstring"><div class="doc-header" id="SpotLight"><a href="#SpotLight">SpotLight</a></div><div class="doc-content"><pre><code>SpotLight(color, position, direction, angles)</code></pre><p>Creates a spot light which illuminates objects in a light cone starting at <code>position</code> pointing in <code>direction</code>. The opening angle is defined by an inner and outer angle given in <code>angles</code>, between which the light intensity drops off.</p><p>Availability:</p><ul><li><p>GLMakie with <code>shading = MultiLightShading</code></p></li><li><p>RPRMakie</p></li></ul></div></div><pre><code class="language-julia">using GLMakie
+fig</code></pre><p></p><p><a id="example_2241326761629083523"><img alt="" src="../../../assets/reference/scene/lighting/code/output/example_2241326761629083523.png"/></a></p><h3 id="spotlight"><a class="header-anchor" href="#spotlight">SpotLight</a></h3><div class="docstring"><div class="doc-header" id="SpotLight"><a href="#SpotLight">SpotLight</a></div><div class="doc-content"><pre><code>SpotLight(color, position, direction, angles)</code></pre><p>Creates a spot light which illuminates objects in a light cone starting at <code>position</code> pointing in <code>direction</code>. The opening angle is defined by an inner and outer angle given in <code>angles</code>, between which the light intensity drops off.</p><p>Availability:</p><ul><li><p>GLMakie with <code>shading = MultiLightShading</code></p></li><li><p>RPRMakie</p></li></ul></div></div><pre><code class="language-julia">using GLMakie
 
 lights = [
     SpotLight(RGBf(1, 0, 0), Point3f(-3, 0, 3), Vec3f(0,  0, -1), Vec2f(0.0, 0.3pi)),
@@ -108,12 +108,12 @@ lights = [
     SpotLight(RGBf(0, 0, 1), Point3f( 3, 0, 3), Vec3f(0,  0, -1), Vec2f(0.25pi, 0.25pi)),
 ]
 
-fig = Figure(resolution = (600, 600))
+fig = Figure(size = (600, 600))
 ax = LScene(fig[1, 1], scenekw = (lights = lights,))
 ps = [Point3f(x, y, 0) for x in -5:5 for y in -5:5]
 meshscatter!(ax, ps, color = :white, markersize = 0.75)
 scatter!(ax, map(l -&gt; l.position[], lights), color = map(l -&gt; l.color[], lights), strokewidth = 1, strokecolor = :black)
-fig</code></pre><p></p><p><a id="example_11579835501237938835"><img alt="" src="../../../assets/reference/scene/lighting/code/output/example_11579835501237938835.png"/></a></p><h3 id="environmentlight"><a class="header-anchor" href="#environmentlight">EnvironmentLight</a></h3><div class="docstring"><div class="doc-header" id="EnvironmentLight"><a href="#EnvironmentLight">EnvironmentLight</a></div><div class="doc-content"><pre><code>EnvironmentLight(intensity, image)</code></pre><p>An environment light that uses a spherical environment map to provide lighting. See: https://en.wikipedia.org/wiki/Reflection_mapping</p><p>Availability:</p><ul><li><p>RPRMakie</p></li></ul></div></div><div class="page-foot"><div class="copyright">
+fig</code></pre><p></p><p><a id="example_5779063572668511218"><img alt="" src="../../../assets/reference/scene/lighting/code/output/example_5779063572668511218.png"/></a></p><h3 id="environmentlight"><a class="header-anchor" href="#environmentlight">EnvironmentLight</a></h3><div class="docstring"><div class="doc-header" id="EnvironmentLight"><a href="#EnvironmentLight">EnvironmentLight</a></div><div class="doc-content"><pre><code>EnvironmentLight(intensity, image)</code></pre><p>An environment light that uses a spherical environment map to provide lighting. See: https://en.wikipedia.org/wiki/Reflection_mapping</p><p>Availability:</p><ul><li><p>RPRMakie</p></li></ul></div></div><div class="page-foot"><div class="copyright">
     © Makie.jl. Last modified: November 01, 2023. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
       <p>These docs were autogenerated using Makie: v0.20.0, GLMakie: v0.9.0, CairoMakie: v0.11.0, WGLMakie: v0.9.0</p></div></div></div></div><div class="page__footer"><footer><div class="page__footer-follow"><ul class="social-icons"><li><a href="https://twitter.com/MakiePlots" rel="nofollow noopener noreferrer"><i aria-hidden="true" class="fab fa-fw fa-twitter-square"></i> Twitter</a></li><li><a href="https://github.com/JuliaPlots/Makie.jl" rel="nofollow noopener noreferrer"><i aria-hidden="true" class="fab fa-fw fa-github"></i> GitHub</a></li></ul></div><div class="page__footer-copyright">© Makie.jl. Powered by <a href="https://github.com/tlienart/Franklin.jl">Franklin</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div></footer></div></div><script src="../../../../versions.js" type="text/javascript"></script><script src="../../../siteinfo.js" type="text/javascript"></script><script src="../../../libs/warner.js" type="text/javascript"></script><script src="../../../libs/navbar.js"></script><link href="../../../_pagefind/pagefind-ui.css" rel="stylesheet"/><script src="../../../_pagefind/pagefind-ui.js" type="text/javascript"></script><script>
         window.addEventListener('DOMContentLoaded', (event) => {

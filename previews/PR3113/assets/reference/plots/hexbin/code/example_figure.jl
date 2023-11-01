@@ -9,7 +9,7 @@ CairoMakie.activate!() # hide
 using Random
 Random.seed!(1234)
 
-f = Figure(resolution = (800, 800))
+f = Figure(size = (800, 800))
 
 x = 1:100
 y = 1:100
@@ -26,6 +26,6 @@ end
 
 f
 end # hide
-save(joinpath(@OUTPUT, "example_8363929533384526884.png"), __result; ) # hide
-save(joinpath(@OUTPUT, "example_8363929533384526884.svg"), __result; ) # hide
+save(joinpath(@OUTPUT, "example_5517989799873274218.png"), __result; ) # hide
+save(joinpath(@OUTPUT, "example_5517989799873274218.svg"), __result; ) # hide
 nothing # hide

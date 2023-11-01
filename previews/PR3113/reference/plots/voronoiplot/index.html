@@ -35,13 +35,13 @@ using Random
 Random.seed!(1234)
 
 
-f = Figure(resolution=(1200, 450))
+f = Figure(size=(1200, 450))
 ax = Axis(f[1, 1])
 voronoiplot!(ax, rand(Point2f, 50))
 
 ax = Axis(f[1, 2])
 voronoiplot!(ax, rand(10, 10), rand(10, 10), rand(10, 10))
-f</code></pre><p></p><p><a id="example_1178656768019898523"><img alt="" src="../../../assets/reference/plots/voronoiplot/code/output/example_1178656768019898523.svg"/></a></p><p><code>voronoiplot</code> uses the Voronoi tessellation from <a href="https://github.com/DanielVandH/DelaunayTriangulation.jl">DelaunayTriangulation.jl</a> to generate the cells. You can also do this yourself and directly plot the <code>VoronoiTessellation</code> object returned.</p><pre><code class="language-julia">using CairoMakie
+f</code></pre><p></p><p><a id="example_3384160731353224926"><img alt="" src="../../../assets/reference/plots/voronoiplot/code/output/example_3384160731353224926.svg"/></a></p><p><code>voronoiplot</code> uses the Voronoi tessellation from <a href="https://github.com/DanielVandH/DelaunayTriangulation.jl">DelaunayTriangulation.jl</a> to generate the cells. You can also do this yourself and directly plot the <code>VoronoiTessellation</code> object returned.</p><pre><code class="language-julia">using CairoMakie
 using DelaunayTriangulation
 
 using Random
