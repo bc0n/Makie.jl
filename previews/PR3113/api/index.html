@@ -1199,28 +1199,28 @@ datashader(points)</code></pre><p>Do pay attention though, that if x and y don't
      @ ~/work/Makie.jl/Makie.jl/src/interaction/events.jl:35
   [5] disconnect!(c::EmptyCamera)
      @ ~/work/Makie.jl/Makie.jl/src/camera/camera.jl:33
-  [6] disconnect!(c::Camera)
-     @ ~/work/Makie.jl/Makie.jl/src/camera/camera.jl:25
-  [7] disconnect!(window::GLFW.Window, ::typeof(entered_window))
+  [6] disconnect!(window::GLFW.Window, ::typeof(entered_window))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:294
-  [8] disconnect!(window::GLFW.Window, ::typeof(hasfocus))
+  [7] disconnect!(window::GLFW.Window, ::typeof(hasfocus))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:272
-  [9] disconnect!(window::GLFW.Window, ::typeof(scroll))
+  [8] disconnect!(window::GLFW.Window, ::typeof(scroll))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:249
- [10] disconnect!(window::GLFW.Window, ::typeof(mouse_position))
+  [9] disconnect!(window::GLFW.Window, ::typeof(mouse_position))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:218
- [11] disconnect!(window::GLFW.Window, ::typeof(unicode_input))
+ [10] disconnect!(window::GLFW.Window, ::typeof(unicode_input))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:167
- [12] disconnect!(window::GLFW.Window, ::typeof(dropped_files))
+ [11] disconnect!(window::GLFW.Window, ::typeof(dropped_files))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:144
- [13] disconnect!(window::GLFW.Window, ::typeof(keyboard_buttons))
+ [12] disconnect!(window::GLFW.Window, ::typeof(keyboard_buttons))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:123
- [14] disconnect!(window::GLFW.Window, ::typeof(mouse_buttons))
+ [13] disconnect!(window::GLFW.Window, ::typeof(mouse_buttons))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:108
- [15] disconnect!(::GLFW.Window, ::typeof(window_area))
+ [14] disconnect!(::GLFW.Window, ::typeof(window_area))
      @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:86
- [16] disconnect!(window::GLFW.Window, ::typeof(window_open))
-     @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:36</code></pre></div></div><div class="docstring"><div class="doc-header" id="dropped_files"><a href="#dropped_files">dropped_files</a></div><div class="doc-content"><p>Registers a callback for drag and drop of files. returns <code>Observable{Vector{String}}</code>, which are absolute file paths <a href="http://www.glfw.org/docs/latest/group__input.html#gacc95e259ad21d4f666faa6280d4018fd">GLFW Docs</a></p></div></div><div class="docstring"><div class="doc-header" id="ecdfplot"><a href="#ecdfplot">ecdfplot</a></div><div class="doc-content"><pre><code>ecdfplot(values; npoints=10_000[, weights])</code></pre><p>Plot the empirical cumulative distribution function (ECDF) of <code>values</code>.</p><p><code>npoints</code> controls the resolution of the plot. If <code>weights</code> for the values are provided, a weighted ECDF is plotted.</p><h2>Attributes</h2><p>Available attributes and their defaults for <code>Combined{Makie.ecdfplot}</code> are: </p><pre><code>  alpha           1.0
+ [15] disconnect!(window::GLFW.Window, ::typeof(window_open))
+     @ GLMakie ~/work/Makie.jl/Makie.jl/GLMakie/src/events.jl:36
+ [16] disconnect!(c::Camera)
+     @ ~/work/Makie.jl/Makie.jl/src/camera/camera.jl:25</code></pre></div></div><div class="docstring"><div class="doc-header" id="dropped_files"><a href="#dropped_files">dropped_files</a></div><div class="doc-content"><p>Registers a callback for drag and drop of files. returns <code>Observable{Vector{String}}</code>, which are absolute file paths <a href="http://www.glfw.org/docs/latest/group__input.html#gacc95e259ad21d4f666faa6280d4018fd">GLFW Docs</a></p></div></div><div class="docstring"><div class="doc-header" id="ecdfplot"><a href="#ecdfplot">ecdfplot</a></div><div class="doc-content"><pre><code>ecdfplot(values; npoints=10_000[, weights])</code></pre><p>Plot the empirical cumulative distribution function (ECDF) of <code>values</code>.</p><p><code>npoints</code> controls the resolution of the plot. If <code>weights</code> for the values are provided, a weighted ECDF is plotted.</p><h2>Attributes</h2><p>Available attributes and their defaults for <code>Combined{Makie.ecdfplot}</code> are: </p><pre><code>  alpha           1.0
   color           :black
   colormap        :viridis
   colorrange      MakieCore.Automatic()
@@ -1444,132 +1444,132 @@ hi</code></pre><pre><code>on(f, c::Camera, observables::Observable...)</code></p
      @ ~/work/Makie.jl/Makie.jl/MakieCore/src/recipes.jl:38</code></pre></div></div><div class="docstring"><div class="doc-header" id="plot!"><a href="#plot!">plot!</a></div><div class="doc-content"><p>No documentation found.</p><p><code>MakieCore.plot!</code> is a <code>Function</code>.</p><pre><code># 65 methods for generic function "plot!" from MakieCore:
   [1] plot!(fig::Union{GridPosition, Figure}, plot::Combined{MakieCore.plot, Tuple{Makie.FigureSpec}})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/specapi.jl:475
-  [2] plot!(ax::Makie.AbstractAxis, plot::P) where P&lt;:AbstractPlot
-     @ Makie ~/work/Makie.jl/Makie.jl/src/figureplotting.jl:215
-  [3] plot!(p::Combined{Makie.qqplot})
+  [2] plot!(p::Combined{Makie.qqplot})
      @ Makie ~/work/Makie.jl/Makie.jl/src/stats/distributions.jl:125
-  [4] plot!(plot::Combined{Makie.crossbar})
+  [3] plot!(plot::Combined{Makie.crossbar})
      @ Makie ~/work/Makie.jl/Makie.jl/src/stats/crossbar.jl:54
-  [5] plot!(plot::Combined{Makie.boxplot})
+  [4] plot!(plot::Combined{Makie.boxplot})
      @ Makie ~/work/Makie.jl/Makie.jl/src/stats/boxplot.jl:82
-  [6] plot!(plot::Combined{Makie.violin})
+  [5] plot!(plot::Combined{Makie.violin})
      @ Makie ~/work/Makie.jl/Makie.jl/src/stats/violin.jl:50
-  [7] plot!(hb::Combined{Makie.hexbin, &lt;:Tuple{var"#s1361"} where var"#s1361"&lt;:(AbstractVector{&lt;:Point2})})
+  [6] plot!(hb::Combined{Makie.hexbin, &lt;:Tuple{var"#s1361"} where var"#s1361"&lt;:(AbstractVector{&lt;:Point2})})
      @ Makie ~/work/Makie.jl/Makie.jl/src/stats/hexbin.jl:81
-  [8] plot!(plot::Combined{Makie.series})
+  [7] plot!(plot::Combined{Makie.series})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/series.jl:67
-  [9] plot!(plot::MakieCore.Text{&lt;:Tuple{var"#s1830"} where var"#s1830"&lt;:AbstractString})
+  [8] plot!(plot::MakieCore.Text{&lt;:Tuple{var"#s1830"} where var"#s1830"&lt;:AbstractString})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/text.jl:126
- [10] plot!(plot::MakieCore.Text{&lt;:Tuple{var"#s1830"} where var"#s1830"&lt;:Makie.GlyphCollection})
+  [9] plot!(plot::MakieCore.Text{&lt;:Tuple{var"#s1830"} where var"#s1830"&lt;:Makie.GlyphCollection})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/text.jl:141
- [11] plot!(plot::MakieCore.Text{&lt;:Tuple{var"#s1830"} where var"#s1830"&lt;:(AbstractArray{&lt;:Makie.GlyphCollection})})
+ [10] plot!(plot::MakieCore.Text{&lt;:Tuple{var"#s1830"} where var"#s1830"&lt;:(AbstractArray{&lt;:Makie.GlyphCollection})})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/text.jl:142
- [12] plot!(plot::MakieCore.Text{&lt;:Tuple{var"#s1830"} where var"#s1830"&lt;:(AbstractArray{&lt;:AbstractString})})
+ [11] plot!(plot::MakieCore.Text{&lt;:Tuple{var"#s1830"} where var"#s1830"&lt;:(AbstractArray{&lt;:AbstractString})})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/text.jl:144
- [13] plot!(plot::MakieCore.Text{&lt;:Tuple{var"#s1830"} where var"#s1830"&lt;:(AbstractArray{&lt;:Tuple{var"#s1828", var"#s1515"} where {var"#s1828", var"#s1515"&lt;:Point}})})
+ [12] plot!(plot::MakieCore.Text{&lt;:Tuple{var"#s1830"} where var"#s1830"&lt;:(AbstractArray{&lt;:Tuple{var"#s1828", var"#s1515"} where {var"#s1828", var"#s1515"&lt;:Point}})})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/text.jl:150
- [14] plot!(plot::MakieCore.Text)
+ [13] plot!(plot::MakieCore.Text)
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/text.jl:7
- [15] plot!(plot::Combined{Makie.rainclouds})
+ [14] plot!(plot::Combined{Makie.rainclouds})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/raincloud.jl:194
- [16] plot!(plot::Combined{Makie.density, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(AbstractVector)})
+ [15] plot!(plot::Combined{Makie.density, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(AbstractVector)})
      @ Makie ~/work/Makie.jl/Makie.jl/src/stats/density.jl:57
- [17] plot!(plot::Combined{Makie.hist})
+ [16] plot!(plot::Combined{Makie.hist})
      @ Makie ~/work/Makie.jl/Makie.jl/src/stats/hist.jl:160
- [18] plot!(plot::Combined{Makie.stephist})
+ [17] plot!(plot::Combined{Makie.stephist})
      @ Makie ~/work/Makie.jl/Makie.jl/src/stats/hist.jl:54
- [19] plot!(p::Combined{Makie.tooltip, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(Union{Tuple{Vararg{T, N}}, StaticArraysCore.StaticArray{Tuple{N}, T, 1}} where {N, T})})
+ [18] plot!(p::Combined{Makie.tooltip, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(Union{Tuple{Vararg{T, N}}, StaticArraysCore.StaticArray{Tuple{N}, T, 1}} where {N, T})})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/tooltip.jl:82
- [20] plot!(plot::Combined{Makie.tooltip, &lt;:Tuple{var"#s28", var"#s27"} where {var"#s28"&lt;:(Union{Tuple{Vararg{T, N}}, StaticArraysCore.StaticArray{Tuple{N}, T, 1}} where {N, T}), var"#s27"&lt;:AbstractString}})
+ [19] plot!(plot::Combined{Makie.tooltip, &lt;:Tuple{var"#s28", var"#s27"} where {var"#s28"&lt;:(Union{Tuple{Vararg{T, N}}, StaticArraysCore.StaticArray{Tuple{N}, T, 1}} where {N, T}), var"#s27"&lt;:AbstractString}})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/tooltip.jl:75
- [21] plot!(plot::Combined{MakieCore.wireframe, Tuple{T}}) where T
+ [20] plot!(plot::Combined{MakieCore.wireframe, Tuple{T}}) where T
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/wireframe.jl:41
- [22] plot!(plot::Wireframe{&lt;:Tuple{var"#s28", var"#s27", var"#s26"} where {var"#s28", var"#s27", var"#s26"&lt;:(AbstractMatrix)}})
+ [21] plot!(plot::Wireframe{&lt;:Tuple{var"#s28", var"#s27", var"#s26"} where {var"#s28", var"#s27", var"#s26"&lt;:(AbstractMatrix)}})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/wireframe.jl:29
- [23] plot!(p::Combined{Makie.waterfall})
+ [22] plot!(p::Combined{Makie.waterfall})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/waterfall.jl:35
- [24] plot!(p::Combined{Makie.voronoiplot, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:DelaunayTriangulation.VoronoiTessellation})
+ [23] plot!(p::Combined{Makie.voronoiplot, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:DelaunayTriangulation.VoronoiTessellation})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/voronoiplot.jl:183
- [25] plot!(p::Combined{Makie.voronoiplot, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(Vector{&lt;:Point{N}})}) where N
+ [24] plot!(p::Combined{Makie.voronoiplot, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(Vector{&lt;:Point{N}})}) where N
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/voronoiplot.jl:133
- [26] plot!(plot::Combined{Makie.volumeslices})
+ [25] plot!(plot::Combined{Makie.volumeslices})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/volumeslices.jl:20
- [27] plot!(p::Combined{Makie.triplot, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:DelaunayTriangulation.Triangulation})
+ [26] plot!(p::Combined{Makie.triplot, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:DelaunayTriangulation.Triangulation})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/triplot.jl:197
- [28] plot!(p::Combined{Makie.triplot, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(Vector{&lt;:Point})})
+ [27] plot!(p::Combined{Makie.triplot, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(Vector{&lt;:Point})})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/triplot.jl:183
- [29] plot!(c::Combined{Makie.tricontourf, &lt;:Tuple{var"#s28", var"#s27"} where {var"#s28"&lt;:DelaunayTriangulation.Triangulation, var"#s27"&lt;:(AbstractVector{&lt;:Real})}})
+ [28] plot!(c::Combined{Makie.tricontourf, &lt;:Tuple{var"#s28", var"#s27"} where {var"#s28"&lt;:DelaunayTriangulation.Triangulation, var"#s27"&lt;:(AbstractVector{&lt;:Real})}})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/tricontourf.jl:118
- [30] plot!(plot::Combined{Makie.timeseries})
+ [29] plot!(plot::Combined{Makie.timeseries})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/timeseries.jl:37
- [31] plot!(p::Combined{Makie.streamplot})
+ [30] plot!(p::Combined{Makie.streamplot})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/streamplot.jl:169
- [32] plot!(s::Combined{Makie.stem, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(AbstractVector{&lt;:Point})})
+ [31] plot!(s::Combined{Makie.stem, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(AbstractVector{&lt;:Point})})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/stem.jl:52
- [33] plot!(p::Combined{Makie.stairs, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(AbstractVector{&lt;:Point2})})
+ [32] plot!(p::Combined{Makie.stairs, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(AbstractVector{&lt;:Point2})})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/stairs.jl:25
- [34] plot!(p::Combined{Makie.spy})
+ [33] plot!(p::Combined{Makie.spy})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/spy.jl:40
- [35] plot!(p::Combined{Makie.scatterlines, &lt;:Tuple{Vararg{Any, N}}}) where N
+ [34] plot!(p::Combined{Makie.scatterlines, &lt;:Tuple{Vararg{Any, N}}}) where N
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/scatterlines.jl:32
- [36] plot!(plot::Mesh{&lt;:Tuple{var"#s28"} where var"#s28"&lt;:AbstractVector{P}}) where P&lt;:Union{GeometryBasics.AbstractMesh, GeometryBasics.Polygon}
+ [35] plot!(plot::Mesh{&lt;:Tuple{var"#s28"} where var"#s28"&lt;:AbstractVector{P}}) where P&lt;:Union{GeometryBasics.AbstractMesh, GeometryBasics.Polygon}
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/poly.jl:139
- [37] plot!(plot::Poly{&lt;:Tuple{Union{GeometryBasics.GeometryPrimitive, GeometryBasics.Mesh}}})
+ [36] plot!(plot::Poly{&lt;:Tuple{Union{GeometryBasics.GeometryPrimitive, GeometryBasics.Mesh}}})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/poly.jl:11
- [38] plot!(plot::Poly{&lt;:Tuple{var"#s28"} where var"#s28"&lt;:Union{GeometryBasics.Polygon, AbstractVector{&lt;:Union{AbstractVector{&lt;:Union{Tuple{Vararg{T, N}}, StaticArraysCore.StaticArray{Tuple{N}, T, 1}} where {N, T}}, GeometryBasics.AbstractMesh, GeometryBasics.HyperRectangle, GeometryBasics.MultiPolygon, GeometryBasics.Polygon, Union{Tuple{Vararg{T, N}}, StaticArraysCore.StaticArray{Tuple{N}, T, 1}} where {N, T}, Circle}}}})
+ [37] plot!(plot::Poly{&lt;:Tuple{var"#s28"} where var"#s28"&lt;:Union{GeometryBasics.Polygon, AbstractVector{&lt;:Union{AbstractVector{&lt;:Union{Tuple{Vararg{T, N}}, StaticArraysCore.StaticArray{Tuple{N}, T, 1}} where {N, T}}, GeometryBasics.AbstractMesh, GeometryBasics.HyperRectangle, GeometryBasics.MultiPolygon, GeometryBasics.Polygon, Union{Tuple{Vararg{T, N}}, StaticArraysCore.StaticArray{Tuple{N}, T, 1}} where {N, T}, Circle}}}})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/poly.jl:93
- [39] plot!(plot::Combined{Makie.pie})
+ [38] plot!(plot::Combined{Makie.pie})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/pie.jl:25
- [40] plot!(p::Union{Combined{Makie.hspan}, Combined{Makie.vspan}})
+ [39] plot!(p::Union{Combined{Makie.hspan}, Combined{Makie.vspan}})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/hvspan.jl:41
- [41] plot!(p::Union{Combined{Makie.hlines}, Combined{Makie.vlines}})
+ [40] plot!(p::Union{Combined{Makie.hlines}, Combined{Makie.vlines}})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/hvlines.jl:48
- [42] plot!(plot::Combined{Makie.rangebars, T}) where T&lt;:Tuple{AbstractVector{&lt;:Union{Tuple{T, T, T}, StaticArraysCore.StaticArray{Tuple{3}, T, 1}} where T}}
+ [41] plot!(plot::Combined{Makie.rangebars, T}) where T&lt;:Tuple{AbstractVector{&lt;:Union{Tuple{T, T, T}, StaticArraysCore.StaticArray{Tuple{3}, T, 1}} where T}}
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/error_and_rangebars.jl:163
- [43] plot!(plot::Combined{Makie.errorbars, T}) where T&lt;:Tuple{AbstractVector{&lt;:Union{NTuple{4, T}, StaticArraysCore.StaticArray{Tuple{4}, T, 1}} where T}}
+ [42] plot!(plot::Combined{Makie.errorbars, T}) where T&lt;:Tuple{AbstractVector{&lt;:Union{NTuple{4, T}, StaticArraysCore.StaticArray{Tuple{4}, T, 1}} where T}}
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/error_and_rangebars.jl:133
- [44] plot!(p::Combined{Makie.datashader, &lt;:Tuple{Dict{String, Vector{Point{2, Float32}}}}})
+ [43] plot!(p::Combined{Makie.datashader, &lt;:Tuple{Dict{String, Vector{Point{2, Float32}}}}})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/datashader.jl:432
- [45] plot!(p::Combined{Makie.datashader, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(AbstractVector{&lt;:Point})})
+ [44] plot!(p::Combined{Makie.datashader, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(AbstractVector{&lt;:Point})})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/datashader.jl:377
- [46] plot!(p::Combined{Makie.plotlist, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(AbstractArray{PlotSpec})})
+ [45] plot!(p::Combined{Makie.plotlist, &lt;:Tuple{var"#s28"} where var"#s28"&lt;:(AbstractArray{PlotSpec})})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/specapi.jl:367
- [47] plot!(p::Combined{Makie.ablines})
+ [46] plot!(p::Combined{Makie.ablines})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/ablines.jl:18
- [48] plot!(plot::Combined{Makie.annotations})
+ [47] plot!(plot::Combined{Makie.annotations})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/annotations.jl:21
- [49] plot!(p::Combined{Makie.arc})
+ [48] plot!(p::Combined{Makie.arc})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/arc.jl:24
- [50] plot!(arrowplot::Arrows{&lt;:Tuple{AbstractVector{&lt;:Point{N}}, V}}) where {N, V}
+ [49] plot!(arrowplot::Arrows{&lt;:Tuple{AbstractVector{&lt;:Point{N}}, V}}) where {N, V}
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/arrows.jl:115
- [51] plot!(axis::Combined{Makie.axis3d})
+ [50] plot!(axis::Combined{Makie.axis3d})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/axis.jl:320
- [52] plot!(plot::Combined{Makie.band})
+ [51] plot!(plot::Combined{Makie.band})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/band.jl:28
- [53] plot!(p::Combined{Makie.barplot})
+ [52] plot!(p::Combined{Makie.barplot})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/barplot.jl:240
- [54] plot!(pl::Combined{Makie.bracket})
+ [53] plot!(pl::Combined{Makie.bracket})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/bracket.jl:43
- [55] plot!(plot::Combined{Makie.contour, &lt;:Tuple{X, Y, Z, Vol}}) where {X, Y, Z, Vol}
+ [54] plot!(plot::Combined{Makie.contour, &lt;:Tuple{X, Y, Z, Vol}}) where {X, Y, Z, Vol}
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/contours.jl:118
- [56] plot!(plot::T) where T&lt;:Union{Combined{Makie.contour}, Combined{Makie.contour3d}}
+ [55] plot!(plot::T) where T&lt;:Union{Combined{Makie.contour}, Combined{Makie.contour3d}}
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/contours.jl:204
- [57] plot!(c::Combined{Makie.contourf, &lt;:Tuple{var"#s28", var"#s27", var"#s26"} where {var"#s28"&lt;:(AbstractVector{&lt;:Real}), var"#s27"&lt;:(AbstractVector{&lt;:Real}), var"#s26"&lt;:(AbstractMatrix{&lt;:Real})}})
+ [56] plot!(c::Combined{Makie.contourf, &lt;:Tuple{var"#s28", var"#s27", var"#s26"} where {var"#s28"&lt;:(AbstractVector{&lt;:Real}), var"#s27"&lt;:(AbstractVector{&lt;:Real}), var"#s26"&lt;:(AbstractMatrix{&lt;:Real})}})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/contourf.jl:70
- [58] plot!(plot::Combined{RPRMakie.matball})
+ [57] plot!(plot::Combined{RPRMakie.matball})
      @ RPRMakie ~/work/Makie.jl/Makie.jl/RPRMakie/src/meshes.jl:177
- [59] plot!(sc::Combined{Main.FD_SANDBOX_12283929528957551597.stockchart, &lt;:Tuple{AbstractVector{&lt;:Real}, AbstractVector{&lt;:Main.FD_SANDBOX_12283929528957551597.StockValue}}})
+ [58] plot!(sc::Combined{Main.FD_SANDBOX_12283929528957551597.stockchart, &lt;:Tuple{AbstractVector{&lt;:Real}, AbstractVector{&lt;:Main.FD_SANDBOX_12283929528957551597.StockValue}}})
      @ Main.FD_SANDBOX_12283929528957551597 none:1
+ [59] plot!(ax::Makie.AbstractAxis, plot::P) where P&lt;:AbstractPlot
+     @ Makie ~/work/Makie.jl/Makie.jl/src/figureplotting.jl:215
  [60] plot!(fa::Makie.FigureAxis, plot)
      @ Makie ~/work/Makie.jl/Makie.jl/src/figureplotting.jl:213
- [61] plot!(ax::Axis, P::Type{&lt;:Combined{Makie.rainclouds}}, allattrs::Attributes, category_labels, data_array)
-     @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/raincloud.jl:138
- [62] plot!(plot::Combined{MakieCore.plot, Tuple{Makie.FigureSpec}})
+ [61] plot!(plot::Combined{MakieCore.plot, Tuple{Makie.FigureSpec}})
      @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/specapi.jl:473
- [63] plot!(::Combined{F}) where F
+ [62] plot!(::Combined{F}) where F
      @ Makie ~/work/Makie.jl/Makie.jl/src/interfaces.jl:218
- [64] plot!(scene::Union{AbstractScene, MakieCore.ScenePlot}, plot::Combined)
+ [63] plot!(scene::Union{AbstractScene, MakieCore.ScenePlot}, plot::Combined)
      @ Makie ~/work/Makie.jl/Makie.jl/src/interfaces.jl:252
+ [64] plot!(ax::Axis, P::Type{&lt;:Combined{Makie.rainclouds}}, allattrs::Attributes, category_labels, data_array)
+     @ Makie ~/work/Makie.jl/Makie.jl/src/basic_recipes/raincloud.jl:138
  [65] plot!(args...; kw...)
      @ ~/work/Makie.jl/Makie.jl/MakieCore/src/recipes.jl:39</code></pre></div></div><div class="docstring"><div class="doc-header" id="plotkey"><a href="#plotkey">plotkey</a></div><div class="doc-content"><p>No documentation found.</p><p><code>MakieCore.plotkey</code> is a <code>Function</code>.</p><pre><code># 4 methods for generic function "plotkey" from MakieCore:
  [1] plotkey(::Type{&lt;:AbstractPlot{Typ}}) where Typ
@@ -2073,7 +2073,7 @@ ylims!(; low = nothing, high = nothing)</code></pre><p>Set the y-axis limits of 
 zlims!(ax; low = nothing, high = nothing)
 zlims!(ax, zlims)</code></pre><p>Set the z-axis limits of axis <code>ax</code> to <code>low</code> and <code>high</code> or a tuple <code>zlims = (low,high)</code>. If the limits are ordered high-low, the axis orientation will be reversed. If a limit is <code>nothing</code> it will be determined automatically from the plots in the axis.</p><pre><code>zlims!(low, high)
 zlims!(; low = nothing, high = nothing)</code></pre><p>Set the z-axis limits of the current axis to <code>low</code> and <code>high</code>. If the limits are ordered high-low, this reverses the axis orientation. A limit set to <code>nothing</code> will be determined automatically from the plots in the axis.</p><pre><code>zlims!(ax = current_axis())</code></pre><p>Reset the z-axis limits to be determined automatically from the plots in the axis.</p></div></div><div class="docstring"><div class="doc-header" id="zoom!"><a href="#zoom!">zoom!</a></div><div class="doc-content"><pre><code>zoom!(scene, cam::Camera3D, zoom_step[, cad = false, zoom_shift_lookat = false])</code></pre><p>Zooms the camera in or out based on the multiplier <code>zoom_step</code>. A <code>zoom_step</code> of 1.0 is neutral, larger zooms out and lower zooms in.</p><p>If <code>cad = true</code> zooming will also apply a rotation based on how far the cursor is from the center of the scene. If <code>zoom_shift_lookat = true</code> and <code>projectiontype = Orthographic</code> zooming will keep the data under the cursor at the same screen space position.</p><pre><code>zoom!(scene, point, zoom_step, shift_lookat::Bool)</code></pre><p>Zooms the camera of <code>scene</code> in towards <code>point</code> by a factor of <code>zoom_step</code>. A positive <code>zoom_step</code> zooms in while a negative <code>zoom_step</code> zooms out.</p></div></div><div class="docstring"><div class="doc-header" id="zticklabels"><a href="#zticklabels">zticklabels</a></div><div class="doc-content"><pre><code>zticklabels(scene)</code></pre><p>Returns the all the z-axis tick labels. See also <code>ticklabels</code>.</p></div></div><div class="docstring"><div class="doc-header" id="ztickrange"><a href="#ztickrange">ztickrange</a></div><div class="doc-content"><pre><code>ztickrange(scene)</code></pre><p>Returns the tick range along the z-axis. See also <code>tickranges</code>.</p></div></div><div class="docstring"><div class="doc-header" id="ztickrotation"><a href="#ztickrotation">ztickrotation</a></div><div class="doc-content"><pre><code>ztickrotation(scene)</code></pre><p>Returns the rotation of tick labels along the z-axis. See also <code>tickrotations</code></p></div></div><div class="docstring"><div class="doc-header" id="ztickrotation!"><a href="#ztickrotation!">ztickrotation!</a></div><div class="doc-content"><pre><code>ztickrotation!([scene,] zangle)</code></pre><p>Set the rotation of tick labels along the z-axis. See also <code>tickrotations!</code>.</p></div></div><div class="docstring"><div class="doc-header" id="zticks!"><a href="#zticks!">zticks!</a></div><div class="doc-content"><pre><code>zticks!([scene,]; ztickranges=ztickrange(scene), zticklabels=zticklabel(scene))</code></pre><p>Set the tick labels and range along all z-axis. See also <code>ticks!</code>.</p></div></div><div class="page-foot"><div class="copyright">
-    © Makie.jl. Last modified: October 31, 2023. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+    © Makie.jl. Last modified: November 01, 2023. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
       <p>These docs were autogenerated using Makie: v0.20.0, GLMakie: v0.9.0, CairoMakie: v0.11.0, WGLMakie: v0.9.0</p></div></div></div></div><div class="page__footer"><footer><div class="page__footer-follow"><ul class="social-icons"><li><a href="https://twitter.com/MakiePlots" rel="nofollow noopener noreferrer"><i aria-hidden="true" class="fab fa-fw fa-twitter-square"></i> Twitter</a></li><li><a href="https://github.com/JuliaPlots/Makie.jl" rel="nofollow noopener noreferrer"><i aria-hidden="true" class="fab fa-fw fa-github"></i> GitHub</a></li></ul></div><div class="page__footer-copyright">© Makie.jl. Powered by <a href="https://github.com/tlienart/Franklin.jl">Franklin</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div></footer></div></div><script src="../../versions.js" type="text/javascript"></script><script src="../siteinfo.js" type="text/javascript"></script><script src="../libs/warner.js" type="text/javascript"></script><script src="../libs/navbar.js"></script><link href="../_pagefind/pagefind-ui.css" rel="stylesheet"/><script src="../_pagefind/pagefind-ui.js" type="text/javascript"></script><script>
         window.addEventListener('DOMContentLoaded', (event) => {
             new PagefindUI({
